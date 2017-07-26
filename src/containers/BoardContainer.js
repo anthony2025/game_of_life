@@ -1,17 +1,21 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Cell from '../components/Cell'
+import {connect} from 'react-redux'
 
 class BoardContainer extends Component {
-
-
-	render() {
-		let grid = Array(900).fill('0').map(item => <Cell />)
-		return (
-			<div className="BoardContainer">
-				{grid}
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div className="BoardContainer">
+        {this.props.grid.map(row =>
+          row.map((cell, index) => <Cell key={index} />)
+        )}
+      </div>
+    )
+  }
 }
 
-export default BoardContainer
+const mapStateToProps = state => ({
+  grid: state.grid
+})
+
+export default connect(mapStateToProps)(BoardContainer)
