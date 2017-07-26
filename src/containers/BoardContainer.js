@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import Cell from '../components/Cell'
 import {connect} from 'react-redux'
 
+import {resetBoard} from '../store/ducks.js'
+
 class BoardContainer extends Component {
   render() {
     return (
