@@ -7,9 +7,11 @@ import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
-import rootReducer from './store/reducers'
+import rootReducer from './store/ducks'
 
 const store = createStore(rootReducer)
+store.dispatch({type: 'RESET_BOARD'})
+store.dispatch({type: 'CHECK_MATRIX'})
 
 ReactDOM.render(
   <Provider store={store}>
