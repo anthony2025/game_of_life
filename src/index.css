@@ -1,5 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.BoardContainer {
+	display: flex;
+	flex-wrap: wrap;
+	background: red;
+	width: 600px;
+	height: 600px;
+}
+
+.Cell {
+	width: 20px;
+	height: 20px;
+	background: blue;
+	border: 1px black solid;
+}
+
+.Cell:active {
+	background: yellow;
 }
